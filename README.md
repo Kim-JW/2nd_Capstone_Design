@@ -22,7 +22,7 @@
 2) After that, a pop-up message and a voice message about the earthquake occurrence and countermeasures are executed on the Android smartphone, and at the same time, it is transmitted to the Raspberry Pi using BLE communication.
 3) The Raspberry Pi is connected to a display device, stops the video being played, and propagates earthquakes and countermeasures through pictures and voice messages.
 
-![archi](./img/archi.png) 
+![archi](./img/archi.PNG) 
 
 
 ## Result
