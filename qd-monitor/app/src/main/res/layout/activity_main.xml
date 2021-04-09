@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/knu_logo">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginStart="148dp"
+        android:text="측정 시작"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/pocket"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintDimensionRatio="1.6:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chart"
+        app:layout_constraintVertical_chainStyle="spread_inside">
+
+        <TextView
+            android:id="@+id/steadyView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Steady"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="1.6:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/triggerView"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <TextView
+            android:id="@+id/triggerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Trigger"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/processingView"
+            app:layout_constraintDimensionRatio="1.6:1"
+            app:layout_constraintEnd_toEndOf="@id/pocket"
+            app:layout_constraintTop_toTopOf="@id/pocket"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.4" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            android:src="@drawable/left_to_right"
+            app:layout_constraintBottom_toBottomOf="@id/steadyView"
+            app:layout_constraintEnd_toStartOf="@id/triggerView"
+            app:layout_constraintStart_toEndOf="@id/steadyView"
+            app:layout_constraintTop_toTopOf="@id/steadyView" />
+
+        <TextView
+            android:id="@+id/processingView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Processing"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/pocket"
+            app:layout_constraintDimensionRatio="1.6:1"
+            app:layout_constraintEnd_toEndOf="@id/pocket"
+            app:layout_constraintStart_toStartOf="@id/triggerView"
+            app:layout_constraintTop_toBottomOf="@id/triggerView"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:src="@drawable/top_to_bottom"
+            app:layout_constraintBottom_toTopOf="@id/processingView"
+            app:layout_constraintEnd_toEndOf="@id/triggerView"
+            app:layout_constraintStart_toStartOf="@id/triggerView"
+            app:layout_constraintTop_toBottomOf="@id/triggerView" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleX="1.6"
+            android:scaleY="1.6"
+            android:src="@drawable/diagonal"
+            app:layout_constraintBottom_toTopOf="@id/processingView"
+            app:layout_constraintEnd_toStartOf="@id/triggerView"
+            app:layout_constraintStart_toEndOf="@id/steadyView"
+            app:layout_constraintTop_toBottomOf="@id/steadyView" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/eqPocket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/processingView"
+            app:layout_constraintStart_toStartOf="@id/steadyView"
+            app:layout_constraintTop_toTopOf="@id/processingView"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.5">
+
+            <TextView
+                android:id="@+id/Time"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="EQ Time: "
+                app:layout_constraintBottom_toTopOf="@id/Level"
+                app:layout_constraintEnd_toEndOf="@id/Level"
+                app:layout_constraintStart_toStartOf="@id/eqPocket"
+                app:layout_constraintTop_toTopOf="@id/eqPocket"
+                app:layout_constraintVertical_chainStyle="spread_inside" />
+
+            <TextView
+                android:id="@+id/eqTime"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="@id/Time"
+                app:layout_constraintEnd_toEndOf="@id/eqPocket"
+                app:layout_constraintStart_toEndOf="@id/Time"
+                app:layout_constraintTop_toTopOf="@id/Time" />
+
+            <TextView
+                android:id="@+id/Level"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="EQ Level: "
+                app:layout_constraintBottom_toTopOf="@id/PGA"
+                app:layout_constraintStart_toStartOf="@id/eqPocket"
+                app:layout_constraintTop_toBottomOf="@id/Time" />
+
+            <TextView
+                android:id="@+id/eqLevel"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/Level"
+                app:layout_constraintEnd_toEndOf="@id/eqPocket"
+                app:layout_constraintStart_toEndOf="@id/Level"
+                app:layout_constraintTop_toTopOf="@id/Level" />
+
+            <TextView
+                android:id="@+id/PGA"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="PGA: "
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="@id/eqPocket"
+                app:layout_constraintEnd_toEndOf="@id/Level"
+                app:layout_constraintStart_toStartOf="@id/eqPocket"
+                app:layout_constraintTop_toBottomOf="@id/Level" />
+
+            <TextView
+                android:id="@+id/eqPGA"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@id/PGA"
+                app:layout_constraintEnd_toEndOf="@id/eqPocket"
+                app:layout_constraintStart_toEndOf="@id/PGA"
+                app:layout_constraintTop_toTopOf="@id/PGA" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/LogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Log"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRecord"
+        app:layout_constraintTop_toTopOf="@+id/buttonRecord"
+        app:layout_constraintLeft_toLeftOf="@id/InspectButton"
+        app:layout_constraintRight_toRightOf="@id/InspectButton"/>
+
+    <Button
+        android:id="@+id/InspectButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Inspect"
+        android:visibility="visible"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRecord"
+        app:layout_constraintTop_toTopOf="@+id/buttonRecord"/>
+
+    <Button
+        android:id="@+id/TestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:text="Test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonRecord"
+        app:layout_constraintTop_toTopOf="@+id/buttonRecord"
+        android:layout_marginEnd="10dp"/>
+    <TextView
+        android:id="@+id/tvReport"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="상태창"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="Created by KNU Software System lab."
+        app:layout_constraintLeft_toRightOf="@+id/buttonRecord"
+        app:layout_constraintStart_toStartOf="@+id/buttonRecord"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecord" />
+
+
+
+</android.support.constraint.ConstraintLayout>
