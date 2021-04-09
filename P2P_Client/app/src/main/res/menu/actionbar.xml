@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_Discconect"
+        android:title="@string/DisConnect"
+        app:showAsAction="never"
+    />
+
+    <item
+        android:id="@+id/action_AccessInfo"
+        android:title="@string/AccessInfo"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/action_AppInfo"
+        android:title="@string/AppInfo"
+        app:showAsAction="never"
+        />
+</menu>

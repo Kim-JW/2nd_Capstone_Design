@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">P2P_Client</string>
+    <string name="IP">IP address</string>
+    <string name="Port">Port number</string>
+    <string name="Chat">Enter text</string>
+    <string name="Connect">Connect</string>
+    <string name="DisConnect">DisConnect</string>
+    <string name="Send">Send</string>
+    <string name="AccessInfo">Access Info</string>
+    <string name="AppInfo">AppInfo</string>
+</resources>
